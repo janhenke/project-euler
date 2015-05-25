@@ -1,20 +1,9 @@
 #! /usr/bin/env python3
 
-fibs = [1]
-
-def genFibs(limit):
-	a = 1
-	b = 1
-	temp = 0
-
-	while b <= limit:
-		temp = a + b
-		a = b
-		b = temp
-		fibs.append(b)
+from common.fibo import fibo
 
 def main():
-	genFibs(4000000)
+	fibs = fibo(4000000)
 
 	sum = 0
 
