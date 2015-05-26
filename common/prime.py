@@ -29,3 +29,27 @@ def prime_factors(n):
 		else:
 			x += 1
 	return result
+
+def prime_numbers(n):
+	"""Returns the list of the first n prime numbers.
+	"""
+	result = []
+	count = 0
+	x = 2
+	while count < n:
+		if is_prime(x):
+			result.append(x)
+			count += 1
+		x += 1
+	return result
+
+def prime_numbers_below(n):
+	"""Returns the list of all prime numbers smaller than n.
+	"""
+	result = []
+	x = 2
+	while x < n:
+		if is_prime(x):
+			result.append(x)
+		x += 1
+	return result
