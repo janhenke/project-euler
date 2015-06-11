@@ -2,10 +2,8 @@
 
 def is_palindrome(number):
 	n = str(number)
-	for x in range(1,len(n)):
-		if n[x-1] != n[-x]:
-			return False
-	return True
+	reverse = n[::-1]
+	return n == reverse
 
 def main():
 	candidates = []
