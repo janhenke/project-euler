@@ -22,7 +22,46 @@ grid = [[ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77,
 		[ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]]
 
 def main():
-	pass
+	result = 0
+	temp = 0
+	above = False
+	left = False
+
+	for y, row in enumerate(grid):
+
+		if(y < 3):
+			above = False
+		else:
+			above = True
+
+		for x, elem in enumerate(row):
+			
+			if(x < 3):
+				left = False
+			else:
+				left = True
+
+			if above:
+				temp = grid[y-3][x] * grid[y-2][x] * grid[y-1][x] * grid[y][x]
+				if temp > result:
+					result = temp
+
+			if left:
+				temp = row[x-3] * row[x-2] * row[x-1] * row[x]
+				if temp > result:
+					result = temp
+
+			if above and left:
+				temp = grid[y-3][x-3] * grid[y-2][x-2] * grid[y-1][x-1] * grid[y][x]
+				if temp > result:
+					result = temp
+
+			if above and left:
+				temp = grid[y-3][x] * grid[y-2][x-1] * grid[y-1][x-2] * grid[y][x-3]
+				if temp > result:
+					result = temp
+
+	print(result)
 
 if __name__ == '__main__':
 	main()
