@@ -2,16 +2,18 @@
 
 from common.fibo import fibo
 
+
 def main():
-	fibs = fibo(4000000)
+    fibs = fibo(4000000)
 
-	sum = 0
+    sum = 0
 
-	for x in fibs:
-		if x%2 == 0:
-			sum += x
+    for x in fibs:
+        if x % 2 == 0:
+            sum += x
 
-	print(sum)
+    print(sum)
+
 
 if __name__ == '__main__':
-	main()
+    main()
