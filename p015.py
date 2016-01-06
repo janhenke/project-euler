@@ -1,18 +1,11 @@
 #!/usr/bin/env python3
 
-gridX = 20
-gridY = 20
-
-
-def find_paths(point):
-    if point[0] == gridX or point[1] == gridY:
-        return point
+from common.binomial import binomial_coefficient
 
 
 def main():
-    result = find_paths((0, 0))
-
-    print(len(result))
+    # the amount of lattice paths from (0, 0) to (n, k) is (n+k) over n (according to Wikipedia)
+    print(binomial_coefficient(20 + 20, 20))
 
 
 if __name__ == '__main__':
