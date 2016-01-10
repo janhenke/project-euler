@@ -3,7 +3,7 @@
 
 
 def fibonacci_numbers_below(n):
-    """Return the list of fibonacci numbers smaller than limit.
+    """Return the list of fibonacci numbers smaller than 'n'.
 
     :param n: The limit of the generated number, so that result[-1] < n
     """
