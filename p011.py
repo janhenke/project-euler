@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+"""Solves problem 011 from the Project Euler website"""
 
 grid = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
         [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
@@ -22,7 +23,8 @@ grid = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8]
         [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]]
 
 
-def main():
+def solve():
+    """Solve the problem and return the result"""
     result = 0
     temp = 0
     above = False
@@ -62,8 +64,8 @@ def main():
                 if temp > result:
                     result = temp
 
-    print(result)
+    return result
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

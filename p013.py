@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Solves problem 013 from the Project Euler website"""
 
 numbers = [37107287533902102798797998220837590246510135740250,
            46376937677490009712648124896970078050417018260538,
@@ -102,13 +103,14 @@ numbers = [37107287533902102798797998220837590246510135740250,
            53503534226472524250874054075591789781264330331690]
 
 
-def main():
+def solve():
+    """Solve the problem and return the result"""
     result = 0
     for i, x in enumerate(numbers):
         result += x
 
-    print(result)
+    return result
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

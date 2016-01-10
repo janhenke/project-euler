@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
+"""Solves problem 014 from the Project Euler website"""
 
 availableNumbers = set()
 
 
-def generate_Collatz_sequence(start):
+def generate_collatz_sequence(start):
+    """Generates the collatz sequence from the given start value
+
+    :param start: The start value
+    """
     result = [start]
     current = start
     while current != 1:
@@ -18,7 +23,8 @@ def generate_Collatz_sequence(start):
     return result
 
 
-def main():
+def solve():
+    """Solve the problem and return the result"""
     count = 999999
     result = []
     temp = []
@@ -28,7 +34,7 @@ def main():
         availableNumbers.add(x)
 
     while count >= 1:
-        temp = generate_Collatz_sequence(count)
+        temp = generate_collatz_sequence(count)
         if len(temp) > len(result):
             result = temp
 
@@ -36,8 +42,8 @@ def main():
         while not count in availableNumbers:
             count -= 1
 
-    print(result[0])
+    return result[0]
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

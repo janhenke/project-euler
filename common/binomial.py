@@ -1,10 +1,11 @@
 #! /usr/bin/env python3
+"""This module provides functions related to binomials."""
 
 from math import factorial
 
 
 def binomial_coefficient(n, k):
-    """Calculates the binomial coefficient 'n over k'
+    """Calculate the binomial coefficient 'n over k'
 
     :param n: The value of 'n'
     :param k: The value of 'k'

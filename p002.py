@@ -1,19 +1,21 @@
 #! /usr/bin/env python3
+"""Solves problem 002 from the Project Euler website"""
 
-from common.fibo import fibo
+from common.fibonacci import fibonacci_numbers_below
 
 
-def main():
-    fibs = fibo(4000000)
+def solve():
+    """Solve the problem and return the result"""
+    fibs = fibonacci_numbers_below(4000000)
 
-    sum = 0
+    result = 0
 
     for x in fibs:
         if x % 2 == 0:
-            sum += x
+            result += x
 
-    print(sum)
+    return result
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

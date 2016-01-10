@@ -1,9 +1,14 @@
 #! /usr/bin/env python3
+"""Solves problem 012 from the Project Euler website"""
 
 from math import ceil, sqrt
 
 
 def find_devisors(num):
+    """Find all divisors of 'num'
+
+    :param num: The number for which the divisors will be found
+    """
     limit = ceil(sqrt(num))
     result = []
     temp = []
@@ -20,7 +25,8 @@ def find_devisors(num):
     return result
 
 
-def main():
+def solve():
+    """Solve the problem and return the result"""
     divs = []
     num = 0
     i = 1
@@ -30,8 +36,8 @@ def main():
         i += 1
         divs = find_devisors(num)
 
-    print(num)
+    return num
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

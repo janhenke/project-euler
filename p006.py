@@ -1,8 +1,9 @@
 #! /usr/bin/env python3
+"""Solves problem 006 from the Project Euler website"""
 
 
-
-def main():
+def solve():
+    """Solve the problem and return the result"""
     sumsquares = 0
     sumsquared = 0
 
@@ -11,8 +12,8 @@ def main():
         sumsquared += x
     sumsquared **= 2
 
-    print(sumsquared - sumsquares)
+    return (sumsquared - sumsquares)
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())

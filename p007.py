@@ -1,12 +1,14 @@
 #! /usr/bin/env python3
+"""Solves problem 007 from the Project Euler website"""
 
-from common.prime import prime_numbers
+from common.prime import first_n_prime_numbers
 
 
-def main():
-    primes = prime_numbers(10001)
-    print(primes[-1])
+def solve():
+    """Solve the problem and return the result"""
+    primes = first_n_prime_numbers(10001)
+    return primes[-1]
 
 
 if __name__ == '__main__':
-    main()
+    print(solve())
