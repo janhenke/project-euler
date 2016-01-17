@@ -4,7 +4,9 @@
 
 def solve():
     """Solve the problem and return the result"""
-    pass
+    result = 0
+
+    return result
 
 
 if __name__ == '__main__':
