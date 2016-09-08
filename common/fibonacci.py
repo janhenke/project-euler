@@ -29,3 +29,17 @@ def fibonacci_numbers_below(n):
         result.append(b)
         a, b = b, a + b
     return result
+
+
+def fibonacci_numbers_until_n_digits(n):
+    """Return the list fibonacci numbers until the latest has at lest n digits
+
+    :type n: The minimum amount of digits for the last fibonacci number in the list
+    """
+    result = []
+    a, b = 0, 1
+    while len(str(b)) < n:
+        result.append(b)
+        a, b = b, a + b
+    result.append(b)
+    return result
