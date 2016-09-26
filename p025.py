@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Solves problem xxx from the Project Euler website"""
+"""Solves problem 025 from the Project Euler website"""
 from common.fibonacci import fibonacci_numbers_until_n_digits
 
 
