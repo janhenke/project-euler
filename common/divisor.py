@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """This module provides functions to find the divisors of numbers"""
-from math import floor,sqrt
+from math import floor, sqrt
 
 
 def proper_divisors(n):
