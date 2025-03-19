@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.30)
+project(ProjectEuler)
+
+include(GenerateExportHeader)
+include(CheckIPOSupported)
+# check for LTO support in the compiler
+check_ipo_supported(RESULT LTO_SUPPORTED)
+
+add_subdirectory(common)
+
+add_subdirectory(p001)
