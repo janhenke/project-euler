@@ -9,3 +9,4 @@ check_ipo_supported(RESULT LTO_SUPPORTED)
 add_subdirectory(common)
 
 add_subdirectory(p001)
+add_subdirectory(p002)

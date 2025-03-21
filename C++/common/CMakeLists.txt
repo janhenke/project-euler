@@ -2,12 +2,16 @@
 add_library(
         project_euler_common
         STATIC
-        library.cpp
+        fibonacci.cpp
+        fibonacci.hpp
 )
+
+generate_export_header(project_euler_common)
 
 target_include_directories(
         project_euler_common
-        PUBLIC ${CMAKE_SOURCE_DIR}
+        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 set_target_properties(
