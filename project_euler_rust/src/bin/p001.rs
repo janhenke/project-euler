@@ -8,6 +8,6 @@ fn main() {
     }
 
     println!("Project Euler problem 001");
-    println!("==========================");
+    println!();
     println!("Solution: {}", sum);
 }

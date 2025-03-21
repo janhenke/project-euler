@@ -1,5 +1,5 @@
 fn main() {
     println!("Project Euler problem ###");
-    println!("==========================");
+    println!();
     println!("Solution: {}", 0);
 }
