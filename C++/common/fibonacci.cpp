@@ -3,10 +3,11 @@
 //
 #include "fibonacci.hpp"
 
-auto fibonacci::fibonacci_below(const std::uint64_t n) -> std::vector<std::uint64_t>
+template <std::integral T>
+auto fibonacci::fibonacci_below(const T n) -> std::vector<T>
 {
-    std::uint64_t a = 0, b = 1;
-    std::vector<std::uint64_t> result;
+    T a = 0, b = 1;
+    std::vector<T> result;
     result.reserve(n);
 
     while (b < n)
@@ -18,3 +19,7 @@ auto fibonacci::fibonacci_below(const std::uint64_t n) -> std::vector<std::uint6
     }
     return result;
 }
+
+template auto fibonacci::fibonacci_below(std::uint16_t n) -> std::vector<std::uint16_t>;
+template auto fibonacci::fibonacci_below(std::uint32_t n) -> std::vector<std::uint32_t>;
+template auto fibonacci::fibonacci_below(std::uint64_t n) -> std::vector<std::uint64_t>;
