@@ -1,4 +1,5 @@
-﻿
+﻿//using common;
+
 var result = 0UL;
 
 

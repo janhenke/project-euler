@@ -2,7 +2,7 @@
 
 namespace common;
 
-public class Generator
+public static class Generator
 {
     public static IEnumerable<T> Fibonacci<T>()
         where T : IUnsignedNumber<T>, INumber<T>, IMinMaxValue<T>, IComparable<T>
@@ -22,6 +22,24 @@ public class Generator
             var tmp = a + b;
             a = b;
             b = tmp;
+        }
+    }
+
+    public static IEnumerable<T> IntegerFactorisation<T>(T value) where T : IUnsignedNumber<T>, INumber<T>
+    {
+        var remainder = value;
+        var divisor = T.One + T.One;
+        while (remainder > T.One)
+        {
+            if (remainder % divisor == T.Zero)
+            {
+                remainder /= divisor;
+                yield return divisor;
+            }
+            else
+            {
+                divisor += T.One;
+            }
         }
     }
 }
