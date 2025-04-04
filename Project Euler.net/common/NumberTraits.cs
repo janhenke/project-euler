@@ -2,7 +2,7 @@ using System.Numerics;
 
 namespace common;
 
-public class NumberTraits
+public static class NumberTraits
 {
     public static bool IsPalindrome<T>(T value) where T : IUnsignedNumber<T>, INumber<T>
     {
