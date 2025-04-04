@@ -6,6 +6,9 @@ include(CheckIPOSupported)
 # check for LTO support in the compiler
 check_ipo_supported(RESULT LTO_SUPPORTED)
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(libcoro REQUIRED IMPORTED_TARGET libcoro)
+
 add_subdirectory(common)
 
 add_subdirectory(p001)

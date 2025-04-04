@@ -2,8 +2,8 @@
 add_library(
         project_euler_common
         STATIC
-        fibonacci.cpp
-        fibonacci.hpp
+        generators.cpp
+        generators.hpp
 )
 
 generate_export_header(project_euler_common)
@@ -22,4 +22,9 @@ set_target_properties(
         CXX_EXTENSIONS OFF
         POSITION_INDEPENDENT_CODE ON
         INTERPROCEDURAL_OPTIMIZATION ${LTO_SUPPORTED}
+)
+
+target_link_libraries(
+        project_euler_common
+        PUBLIC PkgConfig::libcoro
 )

@@ -1,16 +1,17 @@
 #include <cstdlib>
 #include <print>
 
-#include <fibonacci.hpp>
+#include <generators.hpp>
 
 ///
 /// Solver for Project Euler problem number 002
 ///
 /// https://projecteuler.net/problem=002
 ///
-int main() {
-
-    const auto fibonacci_numbers = fibonacci::fibonacci_below(4'000'000ULL);
+int main()
+{
+    auto fibonacci_numbers = project_euler::common::fibonacci_generator<std::uint64_t>(
+        [](const auto value) { return value < 4'000'000ULL; });
 
     auto result = 0ULL;
 
