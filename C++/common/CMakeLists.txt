@@ -4,9 +4,17 @@ add_library(
         STATIC
         generators.cpp
         generators.hpp
+        numeric_properties.hpp
 )
 
 generate_export_header(project_euler_common)
+
+if (${CMAKE_CXX_COMPILER_ID} IN_LIST GCC_SYNTAX_COMPILER_IDS)
+    target_compile_options(
+            project_euler_common
+            PUBLIC -march=native
+    )
+endif ()
 
 target_include_directories(
         project_euler_common
