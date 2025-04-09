@@ -5,29 +5,29 @@ var factors = new Dictionary<uint, int>();
 
 for (var i = 2U; i <= 20; i++)
 {
-    var tmp = Generator.IntegerFactorisation(i).ToList();
-    for (var j = 0U; j <= 20; j++)
+    var candidates = new Dictionary<uint, int>();
+    foreach (var value in Generator.IntegerFactorisation(i))
     {
-        if (tmp.Contains(j))
-        {
-            if (factors.TryGetValue(j, out var value))
-            {
-                factors[j] = Math.Max(tmp.Count(num => num == j), value);
-            }
-            else
-            {
-                factors[j] = tmp.Count(num => num == j);
-            }
-        }
+        candidates.TryGetValue(value, out var count);
+        candidates[value] = count + 1;
     }
 
-    foreach (var (key, value) in factors)
+    foreach (var (key, value) in candidates)
     {
-        result *= (uint) Math.Pow(key, value);
+        factors.TryGetValue(key, out var factor);
+        factors[key] = factor < value ? value : factor;
+    }
+}
+
+foreach (var factor in factors)
+{
+    for (var j = 0; j < factor.Value; j++)
+    {
+        result *= factor.Key;
     }
 }
 
 
-Console.WriteLine("Project Euler problem ###");
+Console.WriteLine("Project Euler problem 005");
 Console.WriteLine("");
 Console.WriteLine("Solution: {0}", result);
