@@ -12,7 +12,16 @@ generate_export_header(project_euler_common)
 if (${CMAKE_CXX_COMPILER_ID} IN_LIST GCC_SYNTAX_COMPILER_IDS)
     target_compile_options(
             project_euler_common
+            # Enable full optimisation for local CPU
             PUBLIC -march=native
+            # Enable additional warnings
+            PUBLIC -Wall -Wextra -Wpedantic -pedantic-errors
+    )
+elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
+    target_compile_options(
+            project_euler_common
+            # Enable additional warnings
+            PUBLIC /W4
     )
 endif ()
 
