@@ -5,13 +5,13 @@
 #ifndef NUMERIC_PROPERTIES_HPP
 #define NUMERIC_PROPERTIES_HPP
 
-#include <cstdint>
 #include <concepts>
+#include <cmath>
 #include <vector>
 
 namespace project_euler::common
 {
-    template<std::unsigned_integral T>
+    template <std::unsigned_integral T>
     constexpr bool is_palindrome(const T number)
     {
         auto digits = std::vector<T>();
@@ -29,6 +29,30 @@ namespace project_euler::common
             {
                 return false;
             }
+        }
+        return true;
+    }
+
+    template <std::unsigned_integral T>
+    constexpr bool is_prime(const T number)
+    {
+        if (number == 2 || number == 3)
+            return true;
+        if (number < 2 || number % 2 == 0)
+            return false;
+        if (number < 9)
+            return true;
+        if (number % 3 == 0)
+            return false;
+        T r = static_cast<T>(std::sqrt(number));
+        T f = 5;
+        while (f <= r)
+        {
+            if (number % f == 0)
+                return false;
+            if (number % (f + 2) == 0)
+                return false;
+            f += 6;
         }
         return true;
     }
